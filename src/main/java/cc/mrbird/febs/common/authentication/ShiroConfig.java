@@ -57,8 +57,9 @@ public class ShiroConfig {
     private RedisManager redisManager() {
         RedisManager redisManager = new RedisManager();
         redisManager.setHost(host + ":" + port);
-        if (StringUtils.isNotBlank(password))
+        if (StringUtils.isNotBlank(password)) {
             redisManager.setPassword(password);
+        }
         redisManager.setTimeout(timeout);
         redisManager.setDatabase(database);
         return redisManager;
